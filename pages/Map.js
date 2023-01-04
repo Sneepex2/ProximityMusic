@@ -141,7 +141,8 @@ function Map({ navigation }) {
 				<TouchableOpacity
 					style={styles.button}
 					onPress={() => {
-						navigation.navigate("Explore", {});
+						watch_location();
+						//navigation.navigate("Explore", {});
 					}}
 				>
 					<FontAwesome

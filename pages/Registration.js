@@ -6,6 +6,7 @@ import MyTextInput from "../components/MyTextInput";
 import MyText from "../components/MyText";
 import HighlightButton from "../components/HighlightButton";
 import FontAwesome, { BrandIcons } from "react-native-fontawesome";
+import { useTheme } from "../components/ThemeContext";
 
 const Stack = createNativeStackNavigator();
 
@@ -72,10 +73,26 @@ function Registration({ navigation, route }) {
 		);
 	};
 
+	const darkTheme = useTheme();
+
 	return (
 		<Stack.Navigator
 			initialRouteName='Name'
-			screenOptions={{ headerShown: false }}
+			screenOptions={
+				darkTheme == true
+					? {
+							headerShown: false,
+							contentStyle: {
+								backgroundColor: "black",
+							},
+					  }
+					: {
+							headerShown: false,
+							contentStyle: {
+								backgroundColor: "white",
+							},
+					  }
+			}
 		>
 			<Stack.Screen name='Name' component={Name}></Stack.Screen>
 			<Stack.Screen name='Birthday' component={Birthday}></Stack.Screen>

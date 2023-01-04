@@ -11,7 +11,6 @@ function Explore() {
 
 const styles = StyleSheet.create({
 	container: {
-		paddingTop: 100,
 		marginLeft: 10,
 	},
 });

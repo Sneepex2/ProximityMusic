@@ -11,7 +11,7 @@ function Welcome({ navigation, route }) {
 			</ScrollView>
 			<View style={styles.nav}>
 				<View style={{ marginBottom: 10 }}>
-					<MyText>
+					<MyText fontSize={14}>
 						by tapping "get started" you acknowledge that you have
 						read the privacy policy, and agree to the terms of
 						services

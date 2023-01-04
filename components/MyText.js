@@ -1,6 +1,10 @@
 import { StyleSheet, Text } from "react-native";
+import { useEffect, useState, createContext, useContext } from "react";
+import { useTheme } from "./ThemeContext";
 
 function MyText(props) {
+	const darkTheme = useTheme();
+
 	return (
 		<Text
 			style={[
@@ -11,7 +15,11 @@ function MyText(props) {
 					: props.regularBold
 					? styles.regularSizeBold
 					: styles.regularSizeRegular,
-				props.color ? { color: props.color } : { color: "black" },
+				props.color
+					? { color: props.color }
+					: darkTheme
+					? { color: "white" }
+					: { color: "black" },
 				props.fontSize ? { fontSize: props.fontSize } : null,
 			]}
 		>
@@ -22,11 +30,11 @@ function MyText(props) {
 
 const styles = StyleSheet.create({
 	regularSizeBold: {
-		fontSize: 14,
+		fontSize: 16,
 		fontFamily: "Aeonik-Bold",
 	},
 	regularSizeRegular: {
-		fontSize: 14,
+		fontSize: 16,
 		fontFamily: "Aeonik-Regular",
 	},
 	bigSizeBold: {

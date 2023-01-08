@@ -55,7 +55,7 @@ function MapCard(props) {
 			}}
 			style={[
 				styles.card,
-				isToTheRight ? styles.toTheRight : styles.toTheLeft,
+				isToTheRight ? styles.toTheRight : styles.toTheLeft, 
 			]}
 		>
 			{isToTheRight ? (
